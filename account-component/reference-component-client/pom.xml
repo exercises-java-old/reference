@@ -8,7 +8,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>account-component-client</artifactId>
+    <artifactId>reference-component-client</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>

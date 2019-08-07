@@ -8,7 +8,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>account-component-mapper</artifactId>
+    <artifactId>reference-component-mapper</artifactId>
 
 
     <dependencies>

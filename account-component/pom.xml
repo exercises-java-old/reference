@@ -12,7 +12,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>account-component-client</module>
+        <module>reference-component-client</module>
         <module>account-component-dao</module>
         <module>account-component-dao-impl</module>
         <module>account-component-domain</module>

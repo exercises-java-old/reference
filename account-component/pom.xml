@@ -18,7 +18,7 @@
         <module>account-component-domain</module>
         <module>account-component-entity</module>
         <module>reference-component-mapper</module>
-        <module>account-component-mirror</module>
+        <module>reference-component-mirror</module>
         <module>account-component-pu</module>
         <module>account-component-pu-mirror</module>
         <module>account-component-service</module>

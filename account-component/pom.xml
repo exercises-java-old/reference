@@ -15,7 +15,7 @@
         <module>reference-component-client</module>
         <module>account-component-dao</module>
         <module>account-component-dao-impl</module>
-        <module>account-component-domain</module>
+        <module>reference-component-domain</module>
         <module>account-component-entity</module>
         <module>account-component-mapper</module>
         <module>account-component-mirror</module>

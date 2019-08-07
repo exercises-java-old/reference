@@ -23,7 +23,7 @@
         <module>account-component-pu-mirror</module>
         <module>account-component-service</module>
         <module>account-component-service-impl</module>
-        <module>account-component-test</module>
+        <module>reference-component-test</module>
     </modules>
 
     <dependencyManagement>

@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>account-component-test-common</artifactId>
+    <artifactId>reference-component-test-common</artifactId>
 
     <dependencies>
         <dependency>

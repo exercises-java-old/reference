@@ -8,7 +8,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>account-component</artifactId>
+    <artifactId>reference-component</artifactId>
     <packaging>pom</packaging>
 
     <modules>
@@ -17,7 +17,7 @@
         <module>account-component-dao-impl</module>
         <module>account-component-domain</module>
         <module>account-component-entity</module>
-        <module>account-component-mapper</module>
+        <module>reference-component-mapper</module>
         <module>account-component-mirror</module>
         <module>account-component-pu</module>
         <module>account-component-pu-mirror</module>

@@ -14,18 +14,18 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>account-component-client</module>
+        <module>reference-component-client</module>
         <module>account-component-dao</module>
         <module>account-component-dao-impl</module>
         <module>account-component-domain</module>
         <module>reference-component-entity</module>
-        <module>account-component-mapper</module>
-        <module>account-component-mirror</module>
+        <module>reference-component-mapper</module>
+        <module>reference-component-mirror</module>
         <module>account-component-pu</module>
         <module>account-component-pu-mirror</module>
         <module>account-component-service</module>
         <module>account-component-service-impl</module>
-        <module>account-component-test</module>
+        <module>reference-component-test</module>
     </modules>
 
     <dependencyManagement>

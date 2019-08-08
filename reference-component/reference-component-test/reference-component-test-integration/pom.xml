@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>account-component-test</artifactId>
+        <artifactId>reference-component-test</artifactId>
         <groupId>com.lexicon</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
@@ -14,41 +14,41 @@
     <dependencies>
         <dependency>
             <groupId>com.lexicon</groupId>
-            <artifactId>account-component-test-common</artifactId>
+            <artifactId>reference-component-test-common</artifactId>
         </dependency>
 
 
         <dependency>
             <groupId>com.lexicon</groupId>
-            <artifactId>account-component-client</artifactId>
+            <artifactId>reference-component-client</artifactId>
         </dependency>
         <dependency>
             <groupId>com.lexicon</groupId>
-            <artifactId>account-component-dao</artifactId>
+            <artifactId>reference-component-dao</artifactId>
         </dependency>
         <dependency>
             <groupId>com.lexicon</groupId>
-            <artifactId>account-component-dao-impl</artifactId>
+            <artifactId>reference-component-dao-impl</artifactId>
         </dependency>
         <dependency>
             <groupId>com.lexicon</groupId>
-            <artifactId>account-component-domain</artifactId>
+            <artifactId>reference-component-domain</artifactId>
         </dependency>
         <dependency>
             <groupId>com.lexicon</groupId>
-            <artifactId>account-component-entity</artifactId>
+            <artifactId>reference-component-entity</artifactId>
         </dependency>
         <dependency>
             <groupId>com.lexicon</groupId>
-            <artifactId>account-component-mapper</artifactId>
+            <artifactId>reference-component-mapper</artifactId>
         </dependency>
         <dependency>
             <groupId>com.lexicon</groupId>
-            <artifactId>account-component-service</artifactId>
+            <artifactId>reference-component-service</artifactId>
         </dependency>
         <dependency>
             <groupId>com.lexicon</groupId>
-            <artifactId>account-component-service-impl</artifactId>
+            <artifactId>reference-component-service-impl</artifactId>
         </dependency>
 
 

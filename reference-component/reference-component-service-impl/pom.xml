@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.lexicon</groupId>
-        <artifactId>account-component</artifactId>
+        <artifactId>reference-component</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
@@ -14,19 +14,19 @@
     <dependencies>
         <dependency>
             <groupId>com.lexicon</groupId>
-            <artifactId>account-component-dao</artifactId>
+            <artifactId>reference-component-dao</artifactId>
         </dependency>
         <dependency>
             <groupId>com.lexicon</groupId>
-            <artifactId>account-component-domain</artifactId>
+            <artifactId>reference-component-domain</artifactId>
         </dependency>
         <dependency>
             <groupId>com.lexicon</groupId>
-            <artifactId>account-component-mapper</artifactId>
+            <artifactId>reference-component-mapper</artifactId>
         </dependency>
         <dependency>
             <groupId>com.lexicon</groupId>
-            <artifactId>account-component-service</artifactId>
+            <artifactId>reference-component-service</artifactId>
         </dependency>
     </dependencies>
 </project>

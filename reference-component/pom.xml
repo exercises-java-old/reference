@@ -35,22 +35,22 @@
             -->
             <dependency>
                 <groupId>com.lexicon</groupId>
-                <artifactId>account-component-client</artifactId>
+                <artifactId>reference-component-client</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.lexicon</groupId>
-                <artifactId>account-component-dao</artifactId>
+                <artifactId>reference-component-dao</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.lexicon</groupId>
-                <artifactId>account-component-dao-impl</artifactId>
+                <artifactId>reference-component-dao-impl</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.lexicon</groupId>
-                <artifactId>account-component-domain</artifactId>
+                <artifactId>reference-component-domain</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
@@ -60,37 +60,37 @@
             </dependency>
             <dependency>
                 <groupId>com.lexicon</groupId>
-                <artifactId>account-component-mapper</artifactId>
+                <artifactId>reference-component-mapper</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.lexicon</groupId>
-                <artifactId>account-component-service</artifactId>
+                <artifactId>reference-component-service</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.lexicon</groupId>
-                <artifactId>account-component-service-impl</artifactId>
+                <artifactId>reference-component-service-impl</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.lexicon</groupId>
-                <artifactId>account-component-mirror</artifactId>
+                <artifactId>reference-component-mirror</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.lexicon</groupId>
-                <artifactId>account-component-pu</artifactId>
+                <artifactId>reference-component-pu</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.lexicon</groupId>
-                <artifactId>account-component-pu-mirror</artifactId>
+                <artifactId>reference-component-pu-mirror</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.lexicon</groupId>
-                <artifactId>account-component-test-common</artifactId>
+                <artifactId>reference-component-test-common</artifactId>
                 <version>${project.version}</version>
             </dependency>
 

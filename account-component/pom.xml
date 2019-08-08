@@ -24,7 +24,7 @@
         <module>account-component-pu</module>
         <module>account-component-pu-mirror</module>
         <module>account-component-service</module>
-        <module>account-component-service-impl</module>
+        <module>reference-component-service-impl</module>
         <module>reference-component-test</module>
     </modules>
 

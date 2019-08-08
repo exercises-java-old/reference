@@ -4,29 +4,22 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.lexicon</groupId>
-        <artifactId>account-component</artifactId>
+        <artifactId>reference-component</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>account-component-service-impl</artifactId>
+    <artifactId>reference-component-dao-impl</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
             <groupId>com.lexicon</groupId>
-            <artifactId>account-component-dao</artifactId>
+            <artifactId>reference-component-dao</artifactId>
         </dependency>
+
         <dependency>
-            <groupId>com.lexicon</groupId>
-            <artifactId>account-component-domain</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.lexicon</groupId>
-            <artifactId>account-component-mapper</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.lexicon</groupId>
-            <artifactId>account-component-service</artifactId>
+            <groupId>com.so4it.sugar</groupId>
+            <artifactId>component-dao-gs</artifactId>
         </dependency>
     </dependencies>
 </project>

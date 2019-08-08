@@ -4,20 +4,20 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.lexicon</groupId>
-        <artifactId>account-component</artifactId>
+        <artifactId>reference-component</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>account-component-pu-mirror</artifactId>
+    <artifactId>reference-component-pu-mirror</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>
 
         <dependency>
             <groupId>com.lexicon</groupId>
-            <artifactId>account-component-mirror</artifactId>
+            <artifactId>reference-component-mirror</artifactId>
         </dependency>
-        
+
         <dependency>
             <groupId>com.so4it.sugar</groupId>
             <artifactId>configuration-spring</artifactId>
@@ -31,7 +31,7 @@
             <artifactId>mongodb-datasource</artifactId>
         </dependency>
     </dependencies>
-    
+
     <build>
         <pluginManagement>
             <plugins>
@@ -54,13 +54,13 @@
                 </plugin>
             </plugins>
         </pluginManagement>
-        
+
         <plugins>
             <plugin>
                 <artifactId>maven-dependency-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
-            
+
 </project>
 

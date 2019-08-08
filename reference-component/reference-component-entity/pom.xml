@@ -16,7 +16,7 @@
     <dependencies>
         <dependency>
             <groupId>com.lexicon</groupId>
-            <artifactId>account-component-domain</artifactId>
+            <artifactId>reference-component-domain</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 

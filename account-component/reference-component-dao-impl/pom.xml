@@ -8,7 +8,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>account-component-dao-impl</artifactId>
+    <artifactId>reference-component-dao-impl</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>

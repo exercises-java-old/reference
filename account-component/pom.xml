@@ -18,8 +18,8 @@
         <module>account-component-dao</module>
         <module>account-component-dao-impl</module>
         <module>reference-component-domain</module>
-        <module>reference-component-entity</module>
         <module>reference-component-mapper</module>
+        <module>reference-component-entity</module>
         <module>reference-component-mirror</module>
         <module>account-component-pu</module>
         <module>account-component-pu-mirror</module>

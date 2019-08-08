@@ -8,7 +8,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>account-component-test-unit</artifactId>
+    <artifactId>reference-component-test-unit</artifactId>
 
 
     <dependencies>

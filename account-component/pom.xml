@@ -19,7 +19,7 @@
         <module>account-component-entity</module>
         <module>reference-component-mapper</module>
         <module>account-component-mirror</module>
-        <module>account-component-pu</module>
+        <module>reference-component-pu</module>
         <module>account-component-pu-mirror</module>
         <module>account-component-service</module>
         <module>account-component-service-impl</module>

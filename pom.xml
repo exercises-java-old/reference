@@ -9,7 +9,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>account-component</module>
+        <module>reference-component</module>
 	<!--
 
         <module>agreement</module>

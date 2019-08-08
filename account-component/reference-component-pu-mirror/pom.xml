@@ -8,7 +8,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>account-component-pu-mirror</artifactId>
+    <artifactId>reference-component-pu-mirror</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>

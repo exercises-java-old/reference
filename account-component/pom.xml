@@ -20,7 +20,7 @@
         <module>account-component-mapper</module>
         <module>account-component-mirror</module>
         <module>reference-component-pu</module>
-        <module>account-component-pu-mirror</module>
+        <module>reference-component-pu-mirror</module>
         <module>account-component-service</module>
         <module>account-component-service-impl</module>
         <module>account-component-test</module>

@@ -8,19 +8,18 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>account-component-mirror</artifactId>
-    <packaging>jar</packaging>
+    <artifactId>reference-component-mapper</artifactId>
+
 
     <dependencies>
         <dependency>
             <groupId>com.lexicon</groupId>
+            <artifactId>account-component-domain</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.lexicon</groupId>
             <artifactId>account-component-entity</artifactId>
         </dependency>
-
-        <dependency>
-            <groupId>com.so4it.sugar</groupId>
-            <artifactId>datasource-core</artifactId>
-        </dependency>
     </dependencies>
-</project>
 
+</project>

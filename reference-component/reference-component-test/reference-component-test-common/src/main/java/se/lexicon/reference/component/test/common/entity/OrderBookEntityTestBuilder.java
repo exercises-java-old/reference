@@ -10,7 +10,7 @@ public class OrderBookEntityTestBuilder extends AbstractTestBuilder<OrderBookEnt
 
     public OrderBookEntityTestBuilder(OrderBookEntity.Builder builder) {
         this.builder = Required.notNull(builder,"builder");
-        this.builder.withId("1234")
+        this.builder
                 .withName("test1");
     }
     public static OrderBookEntityTestBuilder builder(){

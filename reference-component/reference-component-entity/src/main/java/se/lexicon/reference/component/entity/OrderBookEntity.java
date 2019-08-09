@@ -3,11 +3,13 @@ package se.lexicon.reference.component.entity;
 import com.gigaspaces.annotation.pojo.SpaceClass;
 import com.gigaspaces.annotation.pojo.SpaceId;
 import com.gigaspaces.annotation.pojo.SpaceRouting;
+import com.so4it.annotation.Allowed;
 import com.so4it.common.util.object.Required;
 import com.so4it.component.entity.AbstractEntityBuilder;
 import com.so4it.component.entity.IdEntity;
 @SpaceClass
 public class OrderBookEntity extends IdEntity<String> {
+    @Allowed(types = Allowed.Type.NULLABLE,value = "value can be nullable because its autogenerate")
     private String id;
     private String name;
 
@@ -22,7 +24,7 @@ public class OrderBookEntity extends IdEntity<String> {
     }
 
     @Override
-    @SpaceId(autoGenerate = false)
+    @SpaceId(autoGenerate =true)
     @SpaceRouting
     public String getId() {
         return id;

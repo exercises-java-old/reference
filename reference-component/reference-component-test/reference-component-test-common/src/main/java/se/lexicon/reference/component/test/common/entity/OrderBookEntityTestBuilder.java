@@ -8,13 +8,16 @@ public class OrderBookEntityTestBuilder extends AbstractTestBuilder<OrderBookEnt
 
   private OrderBookEntity.Builder builder;
 
-  public OrderBookEntityTestBuilder(OrderBookEntity.Builder builder){
-      this.builder= Required.notNull(builder ,"builder");
-      this.builder=builder.withId("1234").withName("shaza");
-  }
-  public static OrderBookEntityTestBuilder builder(){
-      return new OrderBookEntityTestBuilder(OrderBookEntity.builder());
-  }
+    public OrderBookEntityTestBuilder(OrderBookEntity.Builder builder) {
+        this.builder = Required.notNull(builder,"builder");
+        this.builder
+                .withName("test1");
+    }
+    
+    public static OrderBookEntityTestBuilder builder(){
+        return new OrderBookEntityTestBuilder(OrderBookEntity.builder());
+    }
+
     @Override
     public OrderBookEntity build() {
         return builder.build();

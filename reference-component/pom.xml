@@ -15,18 +15,6 @@
 
     <modules>
         <module>reference-component-client</module>
-<<<<<<< HEAD:account-component/pom.xml
-        <module>account-component-dao</module>
-        <module>account-component-dao-impl</module>
-        <module>account-component-domain</module>
-        <module>reference-component-entity</module>
-        <module>reference-component-mapper</module>
-        <module>reference-component-mirror</module>
-        <module>account-component-pu</module>
-        <module>account-component-pu-mirror</module>
-        <module>account-component-service</module>
-        <module>account-component-service-impl</module>
-=======
         <module>reference-component-dao</module>
         <module>reference-component-dao-impl</module>
         <module>reference-component-domain</module>
@@ -37,7 +25,6 @@
         <module>reference-component-pu-mirror</module>
         <module>reference-component-service</module>
         <module>reference-component-service-impl</module>
->>>>>>> develop:reference-component/pom.xml
         <module>reference-component-test</module>
     </modules>
 

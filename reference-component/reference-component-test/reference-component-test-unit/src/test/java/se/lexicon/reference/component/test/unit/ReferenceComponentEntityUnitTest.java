@@ -1,4 +1,4 @@
-package se.lexicon.account.component.test.unit;
+package se.lexicon.reference.component.test.unit;
 
 import com.so4it.test.builder.entity.EntityMatchers;
 import com.so4it.test.category.UnitTest;

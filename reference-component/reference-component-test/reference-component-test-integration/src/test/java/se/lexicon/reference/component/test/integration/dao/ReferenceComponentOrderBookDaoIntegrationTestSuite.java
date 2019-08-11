@@ -55,7 +55,7 @@ public class ReferenceComponentOrderBookDaoIntegrationTestSuite {
     public static SpringContextRule getExportContext() {
         if (EXPORT_TEST_RULE == null) {
             EXPORT_TEST_RULE = new SpringContextRule()
-                    .addXmlConfiguration("account-component-dao.xml")
+                    .addXmlConfiguration("reference-component-dao.xml")
                     .addXmlConfiguration("account-component-test-space.xml")
                     .addBean(MBeanRegistry.DEFAULT_BEAN_NAME, MBeanRegistryFactory.createRegistry())
                     .addBean(ServiceRegistryClient.DEFAULT_API_BEAN_NAME, SERVICE_REGISTRY)

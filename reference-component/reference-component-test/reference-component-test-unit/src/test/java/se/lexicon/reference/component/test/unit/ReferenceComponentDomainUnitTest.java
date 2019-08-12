@@ -11,7 +11,7 @@ public class ReferenceComponentDomainUnitTest  {
     private static final String PACKAGE_NAME = "se.lexicon.reference.component.test.common.entity";
 
     @Test
-    public void testEntityCompliance() {
+    public void testDomainCompliance() {
         TestBuilderExecutor.execute(PACKAGE_NAME, EntityMatchers.getMatchers());
     }
 }

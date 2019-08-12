@@ -33,4 +33,11 @@ public class OrderBookServiceImpl implements OrderBookService {
         OrderBookEntity orderBookEntity = orderBookDao.read(id);
         return OrderBook.builder().withId(id).withName(orderBookEntity.getName()).build();
     }
+
+    @Override
+    public  String getNameToId(String id){
+
+        OrderBookEntity orderBookEntity= orderBookDao.read(id);
+        return String.valueOf(orderBookEntity.getName());
+    }
 }

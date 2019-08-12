@@ -36,4 +36,15 @@ public class ReferenceComponentOrderBookServiceIntegrationTest {
         Assert.assertEquals(inserted.getName(), fetched.getName());
 
     }
+
+    @Test
+    public void testGetName(){
+
+        OrderBookService orderBookService=ReferenceComponentServiceIntegrationTestSuite.getImportContext().getBean(OrderBookService.class);
+        OrderBook inserted= orderBookService.createOrderBook(OrderBookTestBuilder.builder().build());
+        OrderBook fetched = orderBookService.getOrderbook(inserted.getId());
+        Assert.assertEquals(inserted.getName(), orderBookService.getNameToId(fetched.getId()));
+
+
+    }
 }

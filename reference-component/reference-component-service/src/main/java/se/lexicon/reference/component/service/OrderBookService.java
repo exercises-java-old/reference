@@ -9,4 +9,5 @@ public interface OrderBookService {
     OrderBook createOrderBook(@Routing("getId") OrderBook orderBook);
 
     OrderBook getOrderbook(@Routing String id);
+    String getNameToId(@Routing String id);
 }

@@ -4,8 +4,8 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
             http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="accountComponentService" class="com.so4it.common.bean.LazyProxyFactoryBean">
-        <constructor-arg name="beanType" value="se.lexicon.account.component.service.AccountComponentService"/>
+    <bean id="orderBookService" class="com.so4it.common.bean.LazyProxyFactoryBean">
+        <constructor-arg name="beanType" value="se.lexicon.reference.component.service.OrderBookService"/>
         <constructor-arg name="beanContext" ref="frameworksBeanContext"/>
     </bean>
 </beans>

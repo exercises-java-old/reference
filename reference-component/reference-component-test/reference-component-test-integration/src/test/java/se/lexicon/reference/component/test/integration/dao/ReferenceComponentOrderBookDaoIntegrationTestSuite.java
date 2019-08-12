@@ -24,6 +24,7 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
         ReferenceComponentOrderBookDaoIntegrationTest.class,
+        ReferenceComponentInstrumentDaoIntegrationTest.class
        //OrderComponentDaoIntegrationTest.class
 })
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)

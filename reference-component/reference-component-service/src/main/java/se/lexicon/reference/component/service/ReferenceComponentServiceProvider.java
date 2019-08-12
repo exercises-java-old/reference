@@ -10,4 +10,6 @@ public interface ReferenceComponentServiceProvider {
     @Service(value = ServiceBindingType.GS_REMOTING, name = OrderBookService.DEFAULT_BEAN_NAME)
     OrderBookService getOrderBookService();
 
+    @Service(value = ServiceBindingType.GS_REMOTING, name = InstrumentService.DEFAULT_BEAN_NAME)
+    InstrumentService getInstrumentService();
 }

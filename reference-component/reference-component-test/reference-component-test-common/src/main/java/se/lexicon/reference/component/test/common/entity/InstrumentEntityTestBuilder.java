@@ -7,13 +7,12 @@ import se.lexicon.reference.component.entity.InstrumentEntity;
 public class InstrumentEntityTestBuilder extends AbstractTestBuilder<InstrumentEntity> {
 
 
-    public InstrumentEntity.Builder builder;
+    private InstrumentEntity.Builder builder;
 
     public InstrumentEntityTestBuilder(InstrumentEntity.Builder builder) {
         this.builder = Required.notNull(builder, "builder");
         this.builder
-                .withId("Test av id")
-                .withName("Ett namn");
+                .withName("Name");
     }
 
     public static InstrumentEntityTestBuilder builder() {
@@ -22,6 +21,6 @@ public class InstrumentEntityTestBuilder extends AbstractTestBuilder<InstrumentE
 
     @Override
     public InstrumentEntity build() {
-        return (builder.build());
+        return builder.build();
     }
 }

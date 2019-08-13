@@ -19,11 +19,11 @@
     <os-core:distributed-tx-manager id="transactionManager"/>
 
     <os-core:giga-space id="referenceGigaSpace"
-                        space="accountSpace"
+                        space="referenceSpace"
                         tx-manager="transactionManager"/>
 
-    <os-core:embedded-space id="accountSpace"
-                            name="account"
+    <os-core:embedded-space id="referenceSpace"
+                            name="reference"
                             versioned="false"
                             register-for-space-mode-notifications="false"
                             enable-member-alive-indicator="false"

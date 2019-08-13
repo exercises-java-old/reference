@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="orderBookService" class="se.lexicon.reference.component.service.OrderBookServiceImpl">
+        <constructor-arg name="orderBookDao" ref="orderBookDao"/>
+    </bean>
+
+    <bean id="instrumentService" class="se.lexicon.reference.component.service.InstrumentServiceImpl">
+        <constructor-arg name="instrumentDao" ref="instrumentDao"/>
+    </bean>
+
+</beans>

@@ -7,6 +7,8 @@ import com.so4it.common.util.object.Required;
 import com.so4it.component.entity.AbstractEntityBuilder;
 import com.so4it.component.entity.IdEntity;
 
+import java.util.Currency;
+
 @SpaceClass
 public class InstrumentEntity extends IdEntity<String> {
 
@@ -17,17 +19,24 @@ public class InstrumentEntity extends IdEntity<String> {
     //The arrangement id of this account balance
     private String name;
 
+    private Currency currency;
+
     private InstrumentEntity() {
     }
 
     private InstrumentEntity(Builder builder) {
         this.id = builder.id;
         this.name = Required.notNull(builder.name, "name", builder.isTemplate());
+        this.currency = Required.notNull(builder.currency, "currency", builder.isTemplate());
+
     }
+
+    // @SpaceRouting = routing for GS
+    // @Routing = routing for so4it
 
     @Override
     @SpaceId(autoGenerate = true)
-    @SpaceRouting
+    // @SpaceRouting
     public String getId() {
         return id;
     }
@@ -36,6 +45,7 @@ public class InstrumentEntity extends IdEntity<String> {
         this.id = id;
     }
 
+    @SpaceRouting
     public String getName() {
         return name;
     }
@@ -43,6 +53,14 @@ public class InstrumentEntity extends IdEntity<String> {
     private void setName(String name) {
         this.name = name;
 
+    }
+
+    public Currency getCurrency() {
+        return currency;
+    }
+
+    private void setCurrency(Currency currency) {
+        this.currency = currency;
     }
 
     public static Builder builder() {
@@ -58,6 +76,7 @@ public class InstrumentEntity extends IdEntity<String> {
 
         private String id;
         private String name;
+        private Currency currency;
 
         public Builder(boolean template) {
             super(template);
@@ -70,6 +89,11 @@ public class InstrumentEntity extends IdEntity<String> {
 
         public InstrumentEntity.Builder withName(String name) {
             this.name = name;
+            return this;
+        }
+
+        public InstrumentEntity.Builder withCurrency(Currency currency) {
+            this.currency = currency;
             return this;
         }
 

@@ -9,7 +9,7 @@ import com.so4it.common.util.object.ValueObject;
 public class OrderBook extends ValueObject {
 
     private  String id ;
-    private String name;
+    private String instrumentId;
 
     private OrderBook(){
 
@@ -17,15 +17,15 @@ public class OrderBook extends ValueObject {
 
     private OrderBook(Builder builder) {
         this.id= Required.notNull(builder.id,"id");
-        this.name=Required.notNull(builder.name,"name");
+        this.instrumentId=Required.notNull(builder.instrumentId,"instrumentId");
     }
 
     public String getId() {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getInstrumentId() {
+        return instrumentId;
     }
 
     public static Builder builder() {
@@ -34,20 +34,20 @@ public class OrderBook extends ValueObject {
 
     @Override
     protected Object[] getIdFields() {
-        return new Object[]{id, name};
+        return new Object[]{id, instrumentId};
     }
 
     public static class Builder implements com.so4it.common.builder.Builder<OrderBook> {
         private  String id ;
-        private String name;
+        private String instrumentId;
 
 
         public Builder withId(String id){
             this.id=id;
             return this;
         }
-        public Builder withName(String name){
-            this.name=name;
+        public Builder withInstrumentId(String instrumentId){
+            this.instrumentId=instrumentId;
             return this;
         }
 

@@ -12,26 +12,26 @@ import com.so4it.component.entity.IdEntity;
 public class OrderBookEntity extends IdEntity<String> {
     @Allowed(types = Allowed.Type.NULLABLE,value = "value can be nullable because its autogenerate")
     private String id;
-    private String name;
+    private String instrumentId;
 
     private OrderBookEntity() {
     }
 
     private OrderBookEntity(Builder builder) {
         this.id = builder.id;
-        this.name = Required.notNull(builder.name, "name", builder.isTemplate());
+        this.instrumentId = Required.notNull(builder.instrumentId, "instrumentId", builder.isTemplate());
 
     }
 
     @Override
     @SpaceId(autoGenerate =true)
-    @SpaceRouting
     public String getId() {
         return id;
     }
 
-    public String getName() {
-        return name;
+    @SpaceRouting
+    public String getInstrumentId() {
+        return instrumentId;
     }
     private void setId(String id) {
         this.id = id;
@@ -39,8 +39,8 @@ public class OrderBookEntity extends IdEntity<String> {
 
 
 
-    private void setName(String name) {
-        this.name = name;
+    private void setInstrumentId(String instrumentId) {
+        this.instrumentId = instrumentId;
     }
 
     public static Builder builder() {
@@ -55,7 +55,7 @@ public class OrderBookEntity extends IdEntity<String> {
 
     public static class Builder extends AbstractEntityBuilder<OrderBookEntity> {
         private String id;
-        private String name;
+        private String instrumentId;
 
         public Builder(boolean template) {
             super(template);
@@ -66,8 +66,8 @@ public class OrderBookEntity extends IdEntity<String> {
             return this;
         }
 
-        public OrderBookEntity.Builder withName(String name) {
-            this.name = name;
+        public OrderBookEntity.Builder withInstrumentId(String instrumentId) {
+            this.instrumentId = instrumentId;
             return this;
         }
 

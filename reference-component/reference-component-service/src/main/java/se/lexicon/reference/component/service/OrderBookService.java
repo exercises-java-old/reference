@@ -6,8 +6,8 @@ package se.lexicon.reference.component.service;
 public interface OrderBookService {
     String DEFAULT_BEAN_NAME = "orderBookService";
 
-    OrderBook createOrderBook(@Routing("getId") OrderBook orderBook);
+    OrderBook createOrderBook(@Routing("getInstrumentId") OrderBook orderBook);
 
-    OrderBook getOrderbook(@Routing String id);
-    String getNameToId(@Routing String id);
+    OrderBook getOrderbook(@Routing String InstrumentId);
+
 }

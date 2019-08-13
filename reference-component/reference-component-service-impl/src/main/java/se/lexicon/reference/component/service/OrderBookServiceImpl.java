@@ -3,6 +3,7 @@ package se.lexicon.reference.component.service;
 import com.so4it.common.util.object.Required;
 import com.so4it.gs.rpc.ServiceExport;
 import se.lexicon.reference.component.dao.OrderBookDao;
+import se.lexicon.reference.component.domain.CreateOrderBookRequest;
 import se.lexicon.reference.component.domain.OrderBook;
 import se.lexicon.reference.component.entity.OrderBookEntity;
 

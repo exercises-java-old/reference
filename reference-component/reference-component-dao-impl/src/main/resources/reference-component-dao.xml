@@ -11,5 +11,8 @@
     <bean id ="instrumentDao" class="se.lexicon.reference.component.dao.InstrumentDaoImpl">
         <constructor-arg name="gigaSpace" ref="referenceGigaSpace" />
     </bean>
+    <bean id ="createOrderBookRequestDao" class="se.lexicon.reference.component.dao.CreateOrderBookRequestDaoImpl">
+        <constructor-arg name="gigaSpace" ref="referenceGigaSpace" />
+    </bean>
 
 </beans>

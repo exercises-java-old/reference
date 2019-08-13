@@ -28,7 +28,7 @@ import org.junit.runners.Suite;
        //OrderComponentDaoIntegrationTest.class
 })
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class ReferenceComponentOrderBookDaoIntegrationTestSuite {
+public class ReferenceComponentDaoIntegrationTestSuite {
 
     private static final int LUS_PORT = PortUtil.nextFreePort();
 

@@ -25,7 +25,7 @@ public class ReferenceComponentInstrumentDaoIntegrationTest {
 
 
     @Test
-    public void testInsertingOrderBook() {
+    public void testInsertingInstrument() {
         InstrumentDao instrumentDao = ReferenceComponentDaoIntegrationTestSuite.getExportContext().getBean(InstrumentDao.class);
         InstrumentEntity instrumentEntity = instrumentDao.insert(InstrumentEntityTestBuilder.builder().build());
         Assert.assertEquals(instrumentEntity, instrumentDao.read(instrumentEntity.getId()));

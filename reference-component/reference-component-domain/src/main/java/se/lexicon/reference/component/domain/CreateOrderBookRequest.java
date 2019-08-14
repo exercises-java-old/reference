@@ -32,7 +32,7 @@ public class CreateOrderBookRequest extends ValueObject {
 
         private String instrumentId;
 
-        public Builder withInstrument(String instrumentId) {
+        public Builder withInstrumentId(String instrumentId) {
             this.instrumentId = instrumentId;
             return this;
         }

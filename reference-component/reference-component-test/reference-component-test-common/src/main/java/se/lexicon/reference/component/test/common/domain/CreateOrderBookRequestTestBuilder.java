@@ -9,7 +9,7 @@ public class CreateOrderBookRequestTestBuilder extends AbstractTestBuilder<Creat
 
     public CreateOrderBookRequestTestBuilder(CreateOrderBookRequest.Builder builder) {
         this.builder = Required.notNull(builder, "builder");
-        this.builder = builder.withInstrument("12");
+        this.builder = builder.withInstrumentId("12");
     }
 
     public static CreateOrderBookRequestTestBuilder builder() {

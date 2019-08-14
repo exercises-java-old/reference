@@ -27,6 +27,17 @@ public class OrderBookServiceImpl implements OrderBookService {
 
 
     }
+//new methode
+    @Override
+    public CreateOrderBookRequest createOrderBookRequest(CreateOrderBookRequest createOrderBookRequest) {
+        return CreateOrderBookRequest.builder().withInstrumentId("12").build();
+    }
+//new methode
+    @Override
+    public CreateOrderBookRequest getCreatedOrderBookRequest(String instrumentId) {
+        return CreateOrderBookRequest.builder().withInstrumentId(instrumentId).build();
+    }
+
 
     @Override
     public OrderBook getOrderbook(String instrumentId) {

@@ -16,28 +16,17 @@ public class OrderBookServiceImpl implements OrderBookService {
     }
 
     @Override
-    public OrderBook createOrderBook(OrderBook orderBook) {
+    public OrderBook createOrderBook(CreateOrderBookRequest createOrderBookRequest) {
         OrderBookEntity orderBookEntity = OrderBookEntity.builder()
-                .withInstrumentId(orderBook.getInstrumentId()).build();
+                .withInstrumentId(createOrderBookRequest.getInstrumentId())
+                .build();
         orderBookEntity = orderBookDao.insert(orderBookEntity);
         return OrderBook.builder()
                 .withId(orderBookEntity.getId())
                 .withInstrumentId(orderBookEntity.getInstrumentId())
                 .build();
 
-
     }
-//new methode
-    @Override
-    public CreateOrderBookRequest createOrderBookRequest(CreateOrderBookRequest createOrderBookRequest) {
-        return CreateOrderBookRequest.builder().withInstrumentId("12").build();
-    }
-//new methode
-    @Override
-    public CreateOrderBookRequest getCreatedOrderBookRequest(String instrumentId) {
-        return CreateOrderBookRequest.builder().withInstrumentId(instrumentId).build();
-    }
-
 
     @Override
     public OrderBook getOrderbook(String instrumentId) {
@@ -45,6 +34,4 @@ public class OrderBookServiceImpl implements OrderBookService {
         OrderBookEntity orderBookEntity = orderBookDao.readIfExists(OrderBookEntity.templateBuilder().withInstrumentId(instrumentId).build());
         return OrderBook.builder().withId(instrumentId).withInstrumentId(orderBookEntity.getInstrumentId()).build();
     }
-
-
 }

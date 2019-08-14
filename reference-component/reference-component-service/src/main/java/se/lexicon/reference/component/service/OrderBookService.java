@@ -7,11 +7,7 @@ import se.lexicon.reference.component.domain.OrderBook;
 public interface OrderBookService {
     String DEFAULT_BEAN_NAME = "orderBookService";
 
-    OrderBook createOrderBook(@Routing("getInstrumentId") OrderBook orderBook);
+    OrderBook createOrderBook(@Routing("getInstrumentId") CreateOrderBookRequest createOrderBookRequest);
+
     OrderBook getOrderbook(@Routing String InstrumentId);
-
-    //new mehode
-    CreateOrderBookRequest createOrderBookRequest(@Routing("getInstrumentId") CreateOrderBookRequest createOrderBookRequest);
-    CreateOrderBookRequest getCreatedOrderBookRequest(@Routing String instrumentId);
-
 }

@@ -33,25 +33,9 @@ public class ReferenceComponentOrderBookServiceIntegrationTest {
     @Test
     public void testCreatingOrderBook() {
         OrderBookService orderBookService = ReferenceComponentServiceIntegrationTestSuite.getImportContext().getBean(OrderBookService.class);
-        OrderBook inserted = orderBookService.createOrderBook(OrderBookTestBuilder.builder().build());
+        OrderBook inserted = orderBookService.createOrderBook(CreateOrderBookRequestTestBuilder.builder().build());
         OrderBook fetched = orderBookService.getOrderbook(inserted.getInstrumentId());
         Assert.assertEquals(inserted.getInstrumentId(), fetched.getInstrumentId());
 
     }
-    //new methode
-    @Test
-    public void testCreatingOrderBookRequest(){
-        OrderBookService orderBookService = ReferenceComponentServiceIntegrationTestSuite.getImportContext().getBean(OrderBookService.class);
-        CreateOrderBookRequest inserted=orderBookService.createOrderBookRequest(CreateOrderBookRequestTestBuilder.builder().build());
-        CreateOrderBookRequest fetched=orderBookService.getCreatedOrderBookRequest(inserted.getInstrumentId());
-        Assert.assertEquals(inserted.getInstrumentId(),fetched.getInstrumentId());
-
-
-
-
-
-
-    }
-
-
 }

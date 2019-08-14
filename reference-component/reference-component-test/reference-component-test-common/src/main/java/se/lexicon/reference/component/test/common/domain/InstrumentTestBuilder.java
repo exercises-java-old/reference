@@ -4,6 +4,9 @@ import com.so4it.common.util.object.Required;
 import com.so4it.test.domain.AbstractTestBuilder;
 import se.lexicon.reference.component.domain.Instrument;
 
+import java.util.Currency;
+import java.util.Locale;
+
 public class InstrumentTestBuilder extends AbstractTestBuilder<Instrument> {
 
 
@@ -12,7 +15,8 @@ public class InstrumentTestBuilder extends AbstractTestBuilder<Instrument> {
     private InstrumentTestBuilder(Instrument.Builder builder) {
         this.builder = Required.notNull(builder, "builder");
         this.builder = builder.withId("12345")
-                .withName("test");
+                .withName("test")
+                .withCurrency(Currency.getInstance("SEK"));
     }
 
     public static InstrumentTestBuilder builder() {

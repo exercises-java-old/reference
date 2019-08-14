@@ -6,15 +6,15 @@ import se.lexicon.reference.component.entity.OrderBookEntity;
 
 public class OrderBookEntityTestBuilder extends AbstractTestBuilder<OrderBookEntity> {
 
-  private OrderBookEntity.Builder builder;
+    private OrderBookEntity.Builder builder;
 
     public OrderBookEntityTestBuilder(OrderBookEntity.Builder builder) {
-        this.builder = Required.notNull(builder,"builder");
+        this.builder = Required.notNull(builder, "builder");
         this.builder
-                .withName("test1");
+                .withInstrumentId("12");
     }
-    
-    public static OrderBookEntityTestBuilder builder(){
+
+    public static OrderBookEntityTestBuilder builder() {
         return new OrderBookEntityTestBuilder(OrderBookEntity.builder());
     }
 

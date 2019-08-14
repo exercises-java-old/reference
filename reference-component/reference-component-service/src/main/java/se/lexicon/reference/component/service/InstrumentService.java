@@ -6,7 +6,8 @@ import se.lexicon.reference.component.domain.Instrument;
 public interface InstrumentService {
     String DEFAULT_BEAN_NAME = "instrumentService";
 
-    Instrument createInstrument(@Routing("getId")Instrument instrument);
+    // Instrument createInstrument(@Routing("getId")Instrument instrument);
+    Instrument createInstrument(@Routing("getName")Instrument instrument);
 
-    Instrument getInstrument(@Routing String id);
+    Instrument getInstrument(@Routing String name);
 }

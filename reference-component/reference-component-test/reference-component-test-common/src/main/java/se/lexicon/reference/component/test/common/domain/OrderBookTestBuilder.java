@@ -11,7 +11,7 @@ public class OrderBookTestBuilder extends AbstractTestBuilder<OrderBook> {
     private OrderBookTestBuilder(OrderBook.Builder builder) {
         this.builder = Required.notNull(builder,"builder");
         this.builder = builder.withId("12345")
-                .withName("test");
+                .withInstrumentId("test");
     }
 
     public static OrderBookTestBuilder builder() {

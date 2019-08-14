@@ -1,13 +1,13 @@
 package se.lexicon.reference.component.service;
 
-        import com.so4it.gs.rpc.Routing;
-        import se.lexicon.reference.component.domain.OrderBook;
+import com.so4it.gs.rpc.Routing;
+import se.lexicon.reference.component.domain.CreateOrderBookRequest;
+import se.lexicon.reference.component.domain.OrderBook;
 
 public interface OrderBookService {
     String DEFAULT_BEAN_NAME = "orderBookService";
 
-    OrderBook createOrderBook(@Routing("getId") OrderBook orderBook);
+    OrderBook createOrderBook(@Routing("getInstrumentId") CreateOrderBookRequest createOrderBookRequest);
 
-    OrderBook getOrderbook(@Routing String id);
-    String getNameToId(@Routing String id);
+    OrderBook getOrderbook(@Routing String InstrumentId);
 }

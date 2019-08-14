@@ -24,11 +24,14 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
         ReferenceComponentOrderBookDaoIntegrationTest.class,
-        ReferenceComponentInstrumentDaoIntegrationTest.class
+        ReferenceComponentInstrumentDaoIntegrationTest.class,
+
+
+
        //OrderComponentDaoIntegrationTest.class
 })
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class ReferenceComponentOrderBookDaoIntegrationTestSuite {
+public class ReferenceComponentDaoIntegrationTestSuite {
 
     private static final int LUS_PORT = PortUtil.nextFreePort();
 

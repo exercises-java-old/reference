@@ -3,6 +3,7 @@ package se.lexicon.reference.component.service;
 import com.so4it.common.util.object.Required;
 import com.so4it.gs.rpc.ServiceExport;
 import se.lexicon.reference.component.dao.OrderBookDao;
+import se.lexicon.reference.component.domain.CreateOrderBookRequest;
 import se.lexicon.reference.component.domain.OrderBook;
 import se.lexicon.reference.component.entity.OrderBookEntity;
 
@@ -15,29 +16,22 @@ public class OrderBookServiceImpl implements OrderBookService {
     }
 
     @Override
-    public OrderBook createOrderBook(OrderBook orderBook) {
+    public OrderBook createOrderBook(CreateOrderBookRequest createOrderBookRequest) {
         OrderBookEntity orderBookEntity = OrderBookEntity.builder()
-                .withName(orderBook.getName()).build();
+                .withInstrumentId(createOrderBookRequest.getInstrumentId())
+                .build();
         orderBookEntity = orderBookDao.insert(orderBookEntity);
         return OrderBook.builder()
                 .withId(orderBookEntity.getId())
-                .withName(orderBookEntity.getName())
+                .withInstrumentId(orderBookEntity.getInstrumentId())
                 .build();
 
-
     }
 
     @Override
-    public OrderBook getOrderbook(String id) {
+    public OrderBook getOrderbook(String instrumentId) {
 
-        OrderBookEntity orderBookEntity = orderBookDao.read(id);
-        return OrderBook.builder().withId(id).withName(orderBookEntity.getName()).build();
-    }
-
-    @Override
-    public  String getNameToId(String id){
-
-        OrderBookEntity orderBookEntity= orderBookDao.read(id);
-        return String.valueOf(orderBookEntity.getName());
+        OrderBookEntity orderBookEntity = orderBookDao.readIfExists(OrderBookEntity.templateBuilder().withInstrumentId(instrumentId).build());
+        return OrderBook.builder().withId(instrumentId).withInstrumentId(orderBookEntity.getInstrumentId()).build();
     }
 }

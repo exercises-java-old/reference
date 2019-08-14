@@ -6,6 +6,8 @@ import se.lexicon.reference.component.dao.InstrumentDao;
 import se.lexicon.reference.component.domain.Instrument;
 import se.lexicon.reference.component.entity.InstrumentEntity;
 
+import java.util.Currency;
+
 @ServiceExport(InstrumentService.class)
 public class InstrumentServiceImpl implements InstrumentService {
 
@@ -24,12 +26,19 @@ public class InstrumentServiceImpl implements InstrumentService {
         return Instrument.builder()
                 .withId(instrumentEntity.getId())
                 .withName(instrumentEntity.getName())
+                .withCurrency(instrumentEntity.getCurrency())
                 .build();
     }
 
     @Override
-    public Instrument getInstrument(String id) {
-        InstrumentEntity instrumentEntity = instrumentDao.read(id);
-        return Instrument.builder().withId(id).withName(instrumentEntity.getName()).build();
+    //  koden från Magnus tidigare skola - account
+//    public Instrument getInstrument(String id) {
+//        InstrumentEntity instrumentEntity = instrumentDao.read(id);
+//        return Instrument.builder().withId(id).withName(instrumentEntity.getName()).withCurrency(instrumentEntity.getCurrency()).build();
+//    }
+
+    public Instrument getInstrument(String name) {
+        InstrumentEntity instrumentEntity = instrumentDao.read(name);
+        return Instrument.builder().withId(instrumentEntity.getId()).withName(name).withCurrency(instrumentEntity.getCurrency()).build();
     }
 }

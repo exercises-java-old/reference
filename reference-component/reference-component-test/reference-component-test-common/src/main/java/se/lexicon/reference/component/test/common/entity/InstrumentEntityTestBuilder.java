@@ -1,4 +1,5 @@
 package se.lexicon.reference.component.test.common.entity;
+
 import com.so4it.common.util.object.Required;
 import com.so4it.component.entity.AbstractEntityBuilder;
 import com.so4it.test.domain.AbstractTestBuilder;

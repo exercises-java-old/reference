@@ -11,5 +11,4 @@
     <bean id ="instrumentDao" class="se.lexicon.reference.component.dao.InstrumentDaoImpl">
         <constructor-arg name="gigaSpace" ref="referenceGigaSpace" />
     </bean>
-
-</beans>
+   </beans>

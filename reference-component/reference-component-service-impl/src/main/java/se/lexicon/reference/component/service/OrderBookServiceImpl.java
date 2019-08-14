@@ -3,6 +3,7 @@ package se.lexicon.reference.component.service;
 import com.so4it.common.util.object.Required;
 import com.so4it.gs.rpc.ServiceExport;
 import se.lexicon.reference.component.dao.OrderBookDao;
+import se.lexicon.reference.component.domain.CreateOrderBookRequest;
 import se.lexicon.reference.component.domain.OrderBook;
 import se.lexicon.reference.component.entity.OrderBookEntity;
 
@@ -15,15 +16,15 @@ public class OrderBookServiceImpl implements OrderBookService {
     }
 
     @Override
-    public OrderBook createOrderBook(OrderBook orderBook) {
+    public OrderBook createOrderBook(CreateOrderBookRequest createOrderBookRequest) {
         OrderBookEntity orderBookEntity = OrderBookEntity.builder()
-                .withInstrumentId(orderBook.getInstrumentId()).build();
+                .withInstrumentId(createOrderBookRequest.getInstrumentId())
+                .build();
         orderBookEntity = orderBookDao.insert(orderBookEntity);
         return OrderBook.builder()
                 .withId(orderBookEntity.getId())
                 .withInstrumentId(orderBookEntity.getInstrumentId())
                 .build();
-
 
     }
 
@@ -33,6 +34,4 @@ public class OrderBookServiceImpl implements OrderBookService {
         OrderBookEntity orderBookEntity = orderBookDao.readIfExists(OrderBookEntity.templateBuilder().withInstrumentId(instrumentId).build());
         return OrderBook.builder().withId(instrumentId).withInstrumentId(orderBookEntity.getInstrumentId()).build();
     }
-
-
 }

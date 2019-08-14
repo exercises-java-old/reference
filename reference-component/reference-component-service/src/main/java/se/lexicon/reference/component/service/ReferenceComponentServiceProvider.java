@@ -12,4 +12,6 @@ public interface ReferenceComponentServiceProvider {
 
     @Service(value = ServiceBindingType.GS_REMOTING, name = InstrumentService.DEFAULT_BEAN_NAME)
     InstrumentService getInstrumentService();
+
+
 }

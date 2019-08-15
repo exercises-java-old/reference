@@ -4,4 +4,8 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
             http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <bean id="orderBookClient" class="se.lexicon.reference.component.client.OrderBookClientImp">
+        <constructor-arg name="orderBookService" ref="orderBookService"/>
+    </bean>
+
 </beans>

@@ -80,7 +80,7 @@ public class ReferenceComponentServiceIntegrationTestSuite {
     public static synchronized SpringContextRule getImportContext() {
         if (IMPORT_TEST_RULE == null) {
             IMPORT_TEST_RULE = new SpringContextRule();
-            IMPORT_TEST_RULE.addXmlConfiguration("account-component-client.xml");
+            IMPORT_TEST_RULE.addXmlConfiguration("reference-component-client.xml");
             IMPORT_TEST_RULE.addXmlConfiguration("reference-component-test-import.xml");
             IMPORT_TEST_RULE.addBean(MapBeanContext.DEFAULT_BEAN_NAME, new MapBeanContext());
             IMPORT_TEST_RULE.addBean(ServiceRegistryClient.DEFAULT_API_BEAN_NAME, SERVICE_REGISTRY);

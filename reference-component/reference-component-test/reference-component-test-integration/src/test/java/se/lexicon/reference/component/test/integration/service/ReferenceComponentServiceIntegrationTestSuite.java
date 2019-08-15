@@ -26,7 +26,8 @@ import se.lexicon.reference.component.service.ReferenceComponentServiceProvider;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-        ReferenceComponentOrderBookServiceIntegrationTest.class
+        ReferenceComponentOrderBookServiceIntegrationTest.class,
+        ReferenceComponentInstrumentServiceIntegrationTest.class
 })
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ReferenceComponentServiceIntegrationTestSuite {

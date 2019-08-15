@@ -21,7 +21,11 @@ public class InstrumentServiceImpl implements InstrumentService {
     @Override
     public Instrument createInstrument(Instrument instrument) {
         InstrumentEntity instrumentEntity = InstrumentEntity.builder()
-                .withName(instrument.getName()).build();
+                .withName(instrument
+                        .getName())
+                .withCurrency(instrument.getCurrency())
+                .build();
+
         instrumentEntity = instrumentDao.insert(instrumentEntity);
         return Instrument.builder()
                 .withId(instrumentEntity.getId())
@@ -38,7 +42,12 @@ public class InstrumentServiceImpl implements InstrumentService {
 //    }
 
     public Instrument getInstrument(String name) {
-        InstrumentEntity instrumentEntity = instrumentDao.read(name);
-        return Instrument.builder().withId(instrumentEntity.getId()).withName(name).withCurrency(instrumentEntity.getCurrency()).build();
+        InstrumentEntity instrumentEntity = instrumentDao.readIfExists(InstrumentEntity
+                .templateBuilder()
+                .withName(name)
+                .build());
+        return Instrument.builder().withId(instrumentEntity.getId())
+                .withName(instrumentEntity.getName()).withCurrency(instrumentEntity.getCurrency())
+                .build();
     }
 }

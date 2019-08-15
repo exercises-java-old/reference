@@ -28,7 +28,6 @@ public class InstrumentEntity extends IdEntity<String> {
         this.id = builder.id;
         this.name = Required.notNull(builder.name, "name", builder.isTemplate());
         this.currency = Required.notNull(builder.currency, "currency", builder.isTemplate());
-
     }
 
     // @SpaceRouting = routing for GS

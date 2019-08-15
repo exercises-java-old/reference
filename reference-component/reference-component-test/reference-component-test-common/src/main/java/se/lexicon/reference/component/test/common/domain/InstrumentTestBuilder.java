@@ -15,7 +15,7 @@ public class InstrumentTestBuilder extends AbstractTestBuilder<Instrument> {
     private InstrumentTestBuilder(Instrument.Builder builder) {
         this.builder = Required.notNull(builder, "builder");
         this.builder = builder.withId("12345")
-                .withName("test")
+                .withName("testar")
                 .withCurrency(Currency.getInstance("SEK"));
     }
 

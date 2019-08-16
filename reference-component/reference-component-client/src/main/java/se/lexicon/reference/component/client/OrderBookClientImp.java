@@ -6,6 +6,7 @@ import se.lexicon.reference.component.domain.OrderBook;
 import se.lexicon.reference.component.service.OrderBookService;
 
 public class OrderBookClientImp implements OrderBookClient {
+
    private OrderBookService orderBookService;
 
     public OrderBookClientImp(OrderBookService orderBookService) {

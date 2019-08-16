@@ -38,4 +38,12 @@ public class ReferenceComponentOrderBookServiceIntegrationTest {
         Assert.assertEquals(inserted.getInstrumentId(), fetched.getInstrumentId());
 
     }
+
+    @Test
+    public void testGetAllOrderBooks(){
+        OrderBookService orderBookService=ReferenceComponentServiceIntegrationTestSuite.getImportContext().getBean(OrderBookService.class);
+        OrderBook inserted1 =orderBookService.createOrderBook(CreateOrderBookRequestTestBuilder.builder().build());
+        OrderBook inserted2 =orderBookService.createOrderBook(CreateOrderBookRequestTestBuilder.builder().build());
+        Assert.assertEquals(2, orderBookService.getAllOrderBooks().size());
+    }
 }

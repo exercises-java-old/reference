@@ -5,7 +5,12 @@ import com.so4it.gs.rpc.ServiceExport;
 import se.lexicon.reference.component.dao.OrderBookDao;
 import se.lexicon.reference.component.domain.CreateOrderBookRequest;
 import se.lexicon.reference.component.domain.OrderBook;
+import se.lexicon.reference.component.domain.OrderBooks;
 import se.lexicon.reference.component.entity.OrderBookEntity;
+
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @ServiceExport(OrderBookService.class)
 public class OrderBookServiceImpl implements OrderBookService {
@@ -34,4 +39,15 @@ public class OrderBookServiceImpl implements OrderBookService {
         OrderBookEntity orderBookEntity = orderBookDao.readIfExists(OrderBookEntity.templateBuilder().withInstrumentId(instrumentId).build());
         return OrderBook.builder().withId(instrumentId).withInstrumentId(orderBookEntity.getInstrumentId()).build();
     }
+
+    @Override
+    public List<OrderBook> getAllOrderBooks() {
+        return orderBookDao.readAll(OrderBookEntity.templateBuilder().build()).stream().
+                map( entity -> OrderBook.builder()
+                        .withId(entity.getId())
+                        .withInstrumentId(entity.getInstrumentId())
+                        .build()).collect(Collectors.toList());
+    }
+
+
 }

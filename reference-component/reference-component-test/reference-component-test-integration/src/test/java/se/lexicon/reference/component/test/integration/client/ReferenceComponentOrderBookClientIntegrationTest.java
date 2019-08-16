@@ -19,7 +19,7 @@ import se.lexicon.reference.component.test.integration.dao.ReferenceComponentDao
 import se.lexicon.reference.component.test.integration.service.ReferenceComponentServiceIntegrationTestSuite;
 
 @Category(IntegrationTest.class)
-public class ReferenceComponentClientIntegrationIntegrationTest {
+public class ReferenceComponentOrderBookClientIntegrationTest {
     @ClassRule
     public static final RuleChain SUITE_RULE_CHAIN = ReferenceComponentServiceIntegrationTestSuite.SUITE_RULE_CHAIN;
 

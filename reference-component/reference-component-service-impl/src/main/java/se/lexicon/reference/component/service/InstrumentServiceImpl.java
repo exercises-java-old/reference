@@ -4,7 +4,15 @@ import com.so4it.common.util.object.Required;
 import com.so4it.gs.rpc.ServiceExport;
 import se.lexicon.reference.component.dao.InstrumentDao;
 import se.lexicon.reference.component.domain.Instrument;
-import se.lexicon.reference.component.entity.InstrumentEntity; 
+import se.lexicon.reference.component.domain.Instruments;
+import se.lexicon.reference.component.entity.InstrumentEntity;
+
+import java.util.Objects;
+import java.util.Set;
+import java.util.function.BinaryOperator;
+import java.util.function.Function;
+import java.util.function.Supplier;
+import java.util.stream.Collectors;
 
 @ServiceExport(InstrumentService.class)
 public class InstrumentServiceImpl implements InstrumentService {
@@ -19,8 +27,7 @@ public class InstrumentServiceImpl implements InstrumentService {
     @Override
     public Instrument createInstrument(Instrument instrument) {
         InstrumentEntity instrumentEntity = InstrumentEntity.builder()
-                .withName(instrument
-                        .getName())
+                .withName(instrument.getName())
                 .withCurrency(instrument.getCurrency())
                 .build();
 
@@ -38,8 +45,21 @@ public class InstrumentServiceImpl implements InstrumentService {
                 .templateBuilder()
                 .withName(name)
                 .build());
-        return Instrument.builder().withId(instrumentEntity.getId())
-                .withName(instrumentEntity.getName()).withCurrency(instrumentEntity.getCurrency())
+
+        return Instrument.builder()
+                .withId(instrumentEntity.getId())
+                .withName(instrumentEntity.getName())
+                .withCurrency(instrumentEntity.getCurrency())
                 .build();
+    }
+
+    @Override
+    public Instruments getAllInstruments() {
+        Set<InstrumentEntity> entities = instrumentDao.readAll();
+        return Instruments.valueOf(entities.stream().map( m -> Instrument.builder()
+                .withName(m.getName())
+                .withId(m.getId())
+                .withCurrency(m.getCurrency())
+                .build()).collect(Collectors.toSet()));
     }
 }

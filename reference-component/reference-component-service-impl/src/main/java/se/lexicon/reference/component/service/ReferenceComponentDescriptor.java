@@ -1,6 +1,5 @@
 package se.lexicon.reference.component.service;
 
-
 import com.so4it.gs.rpc.Component;
 import com.so4it.gs.rpc.ServiceBindingType;
 
@@ -12,5 +11,4 @@ import com.so4it.gs.rpc.ServiceBindingType;
         defaultServiceType = ServiceBindingType.GS_REMOTING
 )
 public class ReferenceComponentDescriptor {
-
 }

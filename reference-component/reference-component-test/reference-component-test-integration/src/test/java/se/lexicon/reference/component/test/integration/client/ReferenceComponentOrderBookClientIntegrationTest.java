@@ -17,13 +17,8 @@ import se.lexicon.reference.component.test.common.domain.CreateOrderBookRequestT
 import se.lexicon.reference.component.test.integration.service.ReferenceComponentServiceIntegrationTestSuite;
 
 @Category(IntegrationTest.class)
-<<<<<<< HEAD:reference-component/reference-component-test/reference-component-test-integration/src/test/java/se/lexicon/reference/component/test/integration/client/ReferenceComponentOrderBookClientIntegrationTest.java
 public class ReferenceComponentOrderBookClientIntegrationTest {
-=======
-public class ReferenceComponentClientIntegrationIntegrationTest {
 
-
->>>>>>> get-all-instruments:reference-component/reference-component-test/reference-component-test-integration/src/test/java/se/lexicon/reference/component/test/integration/client/ReferenceComponentClientIntegrationIntegrationTest.java
     @ClassRule
     public static final RuleChain SUITE_RULE_CHAIN = ReferenceComponentServiceIntegrationTestSuite.SUITE_RULE_CHAIN;
 

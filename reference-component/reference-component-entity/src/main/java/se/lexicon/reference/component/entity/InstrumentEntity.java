@@ -1,4 +1,5 @@
 package se.lexicon.reference.component.entity;
+
 import com.gigaspaces.annotation.pojo.SpaceClass;
 import com.gigaspaces.annotation.pojo.SpaceId;
 import com.gigaspaces.annotation.pojo.SpaceRouting;

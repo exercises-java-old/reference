@@ -12,7 +12,7 @@ import org.openspaces.core.GigaSpace;
 import se.lexicon.reference.component.domain.Instrument;
 import se.lexicon.reference.component.domain.Instruments;
 import se.lexicon.reference.component.service.InstrumentService;
-import se.lexicon.reference.component.test.common.domain.InstrumentTestBuilder;
+import se.lexicon.reference.component.test.common.domain.CreateInstrumentRequestTestBuilder;
 
 import java.util.Arrays;
 
@@ -36,9 +36,8 @@ public class ReferenceComponentInstrumentServiceIntegrationTest {
 
     @Test
     public void testCreatingInstrument() {
-        InstrumentService instrumentService = ReferenceComponentServiceIntegrationTestSuite.getImportContext()
-                .getBean(InstrumentService.class);
-        Instrument inserted = instrumentService.createInstrument(InstrumentTestBuilder.builder().build());
+        InstrumentService instrumentService = ReferenceComponentServiceIntegrationTestSuite.getImportContext().getBean(InstrumentService.class);
+        Instrument inserted = instrumentService.createInstrument(CreateInstrumentRequestTestBuilder.builder().build());
         Instrument fetched = instrumentService.getInstrument(inserted.getName());
         Assert.assertEquals(inserted.getName(), fetched.getName());
     }
@@ -47,9 +46,9 @@ public class ReferenceComponentInstrumentServiceIntegrationTest {
     public void testGetAllInstruments() {
         InstrumentService instrumentService = ReferenceComponentServiceIntegrationTestSuite.getImportContext()
                 .getBean(InstrumentService.class);
-        Instrument inserted0 = instrumentService.createInstrument(InstrumentTestBuilder.builder().build());
-        Instrument inserted1 = instrumentService.createInstrument(InstrumentTestBuilder.builder().build());
-        Instrument inserted3 = instrumentService.createInstrument(InstrumentTestBuilder.builder().build());
+        Instrument inserted0 = instrumentService.createInstrument(CreateInstrumentRequestTestBuilder.builder().build());
+        Instrument inserted1 = instrumentService.createInstrument(CreateInstrumentRequestTestBuilder.builder().build());
+        Instrument inserted3 = instrumentService.createInstrument(CreateInstrumentRequestTestBuilder.builder().build());
         Instruments fetched = instrumentService.getAllInstruments();
         Assert.assertEquals(3, fetched.size());
         Assert.assertTrue(fetched.asList().containsAll(Arrays.asList(inserted0,inserted1, inserted3)));

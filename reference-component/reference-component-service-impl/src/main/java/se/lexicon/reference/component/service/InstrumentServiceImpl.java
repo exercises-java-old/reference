@@ -3,6 +3,7 @@ package se.lexicon.reference.component.service;
 import com.so4it.common.util.object.Required;
 import com.so4it.gs.rpc.ServiceExport;
 import se.lexicon.reference.component.dao.InstrumentDao;
+import se.lexicon.reference.component.domain.CreateInstrumentRequest;
 import se.lexicon.reference.component.domain.Instrument;
 import se.lexicon.reference.component.entity.InstrumentEntity; 
 
@@ -17,11 +18,11 @@ public class InstrumentServiceImpl implements InstrumentService {
     }
 
     @Override
-    public Instrument createInstrument(Instrument instrument) {
+    public Instrument createInstrument(CreateInstrumentRequest createInstrumentRequest) {
         InstrumentEntity instrumentEntity = InstrumentEntity.builder()
-                .withName(instrument
+                .withName(createInstrumentRequest
                         .getName())
-                .withCurrency(instrument.getCurrency())
+                .withCurrency(createInstrumentRequest.getCurrency())
                 .build();
 
         instrumentEntity = instrumentDao.insert(instrumentEntity);

@@ -11,7 +11,7 @@ import org.junit.rules.RuleChain;
 import org.openspaces.core.GigaSpace;
 import se.lexicon.reference.component.domain.Instrument;
 import se.lexicon.reference.component.service.InstrumentService;
-import se.lexicon.reference.component.test.common.domain.InstrumentTestBuilder;
+import se.lexicon.reference.component.test.common.domain.CreateInstrumentRequestTestBuilder;
 
 @Category(IntegrationTest.class)
 public class ReferenceComponentInstrumentServiceIntegrationTest {
@@ -33,7 +33,7 @@ public class ReferenceComponentInstrumentServiceIntegrationTest {
     @Test
     public void testCreatingInstrument() {
         InstrumentService instrumentService = ReferenceComponentServiceIntegrationTestSuite.getImportContext().getBean(InstrumentService.class);
-        Instrument inserted = instrumentService.createInstrument(InstrumentTestBuilder.builder().build());
+        Instrument inserted = instrumentService.createInstrument(CreateInstrumentRequestTestBuilder.builder().build());
         Instrument fetched = instrumentService.getInstrument(inserted.getName());
         Assert.assertEquals(inserted.getName(), fetched.getName());
     }

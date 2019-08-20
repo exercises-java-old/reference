@@ -41,13 +41,10 @@ public class OrderBookServiceImpl implements OrderBookService {
     }
 
     @Override
-    public List<OrderBook> getAllOrderBooks() {
-        return orderBookDao.readAll(OrderBookEntity.templateBuilder().build()).stream().
-                map( entity -> OrderBook.builder()
-                        .withId(entity.getId())
-                        .withInstrumentId(entity.getInstrumentId())
-                        .build()).collect(Collectors.toList());
+    public OrderBooks getAllOrderBooks() {
+        Set<OrderBookEntity> entities=orderBookDao.readAll();
+        return OrderBooks.valueOf(entities.stream().map(rr->OrderBook.builder()
+                    .withId(rr.getId())
+                    .withInstrumentId(rr.getInstrumentId()).build()).collect(Collectors.toSet()));
     }
-
-
 }

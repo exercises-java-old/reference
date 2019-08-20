@@ -4,6 +4,7 @@ import com.so4it.gs.rpc.Broadcast;
 import com.so4it.gs.rpc.Routing;
 import se.lexicon.reference.component.domain.CreateOrderBookRequest;
 import se.lexicon.reference.component.domain.OrderBook;
+import se.lexicon.reference.component.domain.OrderBooks;
 
 import java.util.List;
 
@@ -14,6 +15,6 @@ public interface OrderBookService {
 
     OrderBook getOrderbook(@Routing String InstrumentId);
 
-    @Broadcast
-    List<OrderBook> getAllOrderBooks();
+    @Broadcast(reducer = OrderBooksRemoteResultReducer.class)
+    OrderBooks getAllOrderBooks();
 }

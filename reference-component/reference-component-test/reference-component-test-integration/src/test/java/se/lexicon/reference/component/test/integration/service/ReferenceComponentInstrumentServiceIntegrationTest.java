@@ -46,9 +46,9 @@ public class ReferenceComponentInstrumentServiceIntegrationTest {
     public void testGetAllInstruments() {
         InstrumentService instrumentService = ReferenceComponentServiceIntegrationTestSuite.getImportContext()
                 .getBean(InstrumentService.class);
-        Instrument inserted0 = instrumentService.createInstrument(InstrumentTestBuilder.builder().build());
-        Instrument inserted1 = instrumentService.createInstrument(InstrumentTestBuilder.builder().build());
-        Instrument inserted3 = instrumentService.createInstrument(InstrumentTestBuilder.builder().build());
+        Instrument inserted0 = instrumentService.createInstrument(CreateInstrumentRequestTestBuilder.builder().build());
+        Instrument inserted1 = instrumentService.createInstrument(CreateInstrumentRequestTestBuilder.builder().build());
+        Instrument inserted3 = instrumentService.createInstrument(CreateInstrumentRequestTestBuilder.builder().build());
         Instruments fetched = instrumentService.getAllInstruments();
         Assert.assertEquals(3, fetched.size());
         Assert.assertTrue(fetched.asList().containsAll(Arrays.asList(inserted0,inserted1, inserted3)));

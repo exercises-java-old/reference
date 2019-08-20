@@ -24,13 +24,13 @@ import org.junit.runners.Suite;
 import se.lexicon.reference.component.service.ReferenceComponentServiceProvider;
 import se.lexicon.reference.component.test.integration.client.ReferenceComponentOrderBookClientIntegrationTest;
 
-
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
         ReferenceComponentOrderBookServiceIntegrationTest.class,
         ReferenceComponentInstrumentServiceIntegrationTest.class,
         ReferenceComponentOrderBookClientIntegrationTest.class,
 })
+
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ReferenceComponentServiceIntegrationTestSuite {
 
@@ -74,7 +74,6 @@ public class ReferenceComponentServiceIntegrationTestSuite {
                     .addBean(DynamicConfiguration.DEFAULT_BEAN_NAME, DYNAMIC_CONFIGURATION)
                     .addBean(MapBeanContext.DEFAULT_BEAN_NAME, new MapBeanContext())
                     .addProvider(ServiceFrameworkCommonTest.getPropertyProvider());
-
         }
         return EXPORT_TEST_RULE;
     }
@@ -93,15 +92,12 @@ public class ReferenceComponentServiceIntegrationTestSuite {
         return IMPORT_TEST_RULE;
     }
 
-
     public static GigaSpaceEmbeddedLusTestRule getGigaSpacesRule() {
         if (GIGA_SPACE_TEST_RULE == null) {
             GIGA_SPACE_TEST_RULE = new GigaSpaceEmbeddedLusTestRule(LUS_PORT);
         }
-
         return GIGA_SPACE_TEST_RULE;
     }
-
 
     public static TestConfigurationSourceTestRule getConfigurationSourceRule() {
         if (CONFIGURATION_SOURCE_TEST_RULE == null) {
@@ -125,8 +121,4 @@ public class ReferenceComponentServiceIntegrationTestSuite {
         }
         return SERVICE_BINDING_RULE;
     }
-
-
 }
-
-

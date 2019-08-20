@@ -24,11 +24,8 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
         ReferenceComponentOrderBookDaoIntegrationTest.class,
-        ReferenceComponentInstrumentDaoIntegrationTest.class,
-
-
-
-       //OrderComponentDaoIntegrationTest.class
+        ReferenceComponentInstrumentDaoIntegrationTest.class
+        // OrderComponentDaoIntegrationTest.class
 })
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ReferenceComponentDaoIntegrationTestSuite {
@@ -66,20 +63,16 @@ public class ReferenceComponentDaoIntegrationTestSuite {
                     .addBean(DynamicConfiguration.DEFAULT_BEAN_NAME, DYNAMIC_CONFIGURATION)
                     .addBean(MapBeanContext.DEFAULT_BEAN_NAME, new MapBeanContext())
                     .addProvider(ServiceFrameworkCommonTest.getPropertyProvider());
-
         }
         return EXPORT_TEST_RULE;
     }
-
 
     public static GigaSpaceEmbeddedLusTestRule getGigaSpacesRule() {
         if (GIGA_SPACE_TEST_RULE == null) {
             GIGA_SPACE_TEST_RULE = new GigaSpaceEmbeddedLusTestRule(LUS_PORT);
         }
-
         return GIGA_SPACE_TEST_RULE;
     }
-
 
     public static TestConfigurationSourceTestRule getConfigurationSourceRule() {
         if (CONFIGURATION_SOURCE_TEST_RULE == null) {
@@ -95,6 +88,4 @@ public class ReferenceComponentDaoIntegrationTestSuite {
     public static <T> void withSetting(Setting<T> name, T value) {
         CONFIGURATION_SOURCE.set(name, value);
     }
-
 }
-

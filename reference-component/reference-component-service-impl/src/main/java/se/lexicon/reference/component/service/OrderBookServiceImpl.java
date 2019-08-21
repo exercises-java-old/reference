@@ -34,7 +34,7 @@ public class OrderBookServiceImpl implements OrderBookService {
     }
 
     @Override
-    public OrderBook getOrderbook(String instrumentId) {
+    public OrderBook getOrderBook(String instrumentId) {
 
         OrderBookEntity orderBookEntity = orderBookDao.readIfExists(OrderBookEntity.templateBuilder().withInstrumentId(instrumentId).build());
         return OrderBook.builder().withId(instrumentId).withInstrumentId(orderBookEntity.getInstrumentId()).build();

@@ -36,21 +36,32 @@ public class ReferenceComponentInstrumentServiceIntegrationTest {
 
     @Test
     public void testCreatingInstrument() {
-        InstrumentService instrumentService = ReferenceComponentServiceIntegrationTestSuite.getImportContext().getBean(InstrumentService.class);
-        Instrument inserted = instrumentService.createInstrument(CreateInstrumentRequestTestBuilder.builder().build());
+        InstrumentService instrumentService = ReferenceComponentServiceIntegrationTestSuite
+                .getImportContext().getBean(InstrumentService.class);
+        Instrument inserted = instrumentService.createInstrument(CreateInstrumentRequestTestBuilder
+                .builder().build());
         Instrument fetched = instrumentService.getInstrument(inserted.getName());
         Assert.assertEquals(inserted.getName(), fetched.getName());
     }
 
     @Test
     public void testGetAllInstruments() {
-        InstrumentService instrumentService = ReferenceComponentServiceIntegrationTestSuite.getImportContext()
-                .getBean(InstrumentService.class);
-        Instrument inserted0 = instrumentService.createInstrument(CreateInstrumentRequestTestBuilder.builder().build());
-        Instrument inserted1 = instrumentService.createInstrument(CreateInstrumentRequestTestBuilder.builder().build());
-        Instrument inserted3 = instrumentService.createInstrument(CreateInstrumentRequestTestBuilder.builder().build());
-        Instruments fetched = instrumentService.getAllInstruments();
-        Assert.assertEquals(3, fetched.size());
-        Assert.assertTrue(fetched.asList().containsAll(Arrays.asList(inserted0,inserted1, inserted3)));
+        InstrumentService instrumentService = ReferenceComponentServiceIntegrationTestSuite
+                .getImportContext().getBean(InstrumentService.class);
+        // fetched by name
+        Instrument inserted1 = instrumentService.createInstrument(CreateInstrumentRequestTestBuilder.builder()
+                .withName("name1").build());
+        Instrument inserted2 = instrumentService.createInstrument(CreateInstrumentRequestTestBuilder.builder()
+                .withName("name2").build());
+        Instruments fetchedByName = instrumentService.getAllInstruments();
+        Assert.assertTrue(fetchedByName.asList().containsAll(Arrays.asList(inserted1, inserted2)));
+
+        // fetched by id
+        Instrument inserted3 = instrumentService.createInstrument(CreateInstrumentRequestTestBuilder.builder()
+                .build());
+        Instrument inserted4 = instrumentService.createInstrument(CreateInstrumentRequestTestBuilder.builder()
+                .build());
+        Instruments fetchedById = instrumentService.getAllInstruments();
+        Assert.assertTrue(fetchedById.asList().containsAll(Arrays.asList(inserted3, inserted4)));
     }
 }

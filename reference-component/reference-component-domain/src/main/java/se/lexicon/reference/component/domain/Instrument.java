@@ -21,7 +21,6 @@ public class Instrument extends ValueObject {
         this.id = Required.notNull(builder.id, "id");
         this.name = Required.notNull(builder.name, "name");
         this.currency = Required.notNull(builder.currency, "currency");
-
     }
 
     public Currency getCurrency() {
@@ -45,7 +44,6 @@ public class Instrument extends ValueObject {
     public static Builder builder() {
         return new Builder();
     }
-
     //
     public static class Builder implements com.so4it.common.builder.Builder<Instrument> {
 
@@ -67,7 +65,6 @@ public class Instrument extends ValueObject {
             this.currency = currency;
             return this;
         }
-
 
         @Override
         public Instrument build() {

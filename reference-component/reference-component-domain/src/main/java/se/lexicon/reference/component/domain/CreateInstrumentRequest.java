@@ -6,16 +6,17 @@ import com.so4it.common.util.object.ValueObject;
 import java.util.Currency;
 
 public class CreateInstrumentRequest extends ValueObject {
+
+
     private String name;
     private Currency currency;
-
 
     private CreateInstrumentRequest() {
     }
 
     private CreateInstrumentRequest(Builder builder) {
         this.name = Required.notNull(builder.name, "name");
-        this.currency = Required.notNull(builder.currency, "currensy");
+        this.currency = Required.notNull(builder.currency, "currency");
     }
 
     public String getName() {
@@ -26,16 +27,16 @@ public class CreateInstrumentRequest extends ValueObject {
         return currency;
     }
 
+    @Override
+    protected Object[] getIdFields() {
+        return new Object[] { name, currency };
+    }
+
+
     public static Builder builder() {
         return new Builder();
     }
-
-
-    @Override
-    protected Object[] getIdFields() {
-        return new Object[]{name, currency};
-    }
-
+    //
     public static class Builder implements com.so4it.common.builder.Builder<CreateInstrumentRequest> {
 
         private String name;
@@ -55,7 +56,5 @@ public class CreateInstrumentRequest extends ValueObject {
         public CreateInstrumentRequest build() {
             return new CreateInstrumentRequest(this);
         }
-
-
     }
 }

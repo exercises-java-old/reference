@@ -6,14 +6,12 @@ import se.lexicon.reference.component.domain.CreateOrderBookRequest;
 import se.lexicon.reference.component.domain.OrderBook;
 import se.lexicon.reference.component.domain.OrderBooks;
 
-import java.util.List;
-
 public interface OrderBookService {
     String DEFAULT_BEAN_NAME = "orderBookService";
 
     OrderBook createOrderBook(@Routing("getInstrumentId") CreateOrderBookRequest createOrderBookRequest);
 
-    OrderBook getOrderbook(@Routing String InstrumentId);
+    OrderBook getOrderBook(@Routing String InstrumentId);
 
     @Broadcast(reducer = OrderBooksRemoteResultReducer.class)
     OrderBooks getAllOrderBooks();

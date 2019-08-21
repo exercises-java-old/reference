@@ -17,6 +17,11 @@ public class CreateInstrumentRequestTestBuilder extends AbstractTestBuilder<Crea
         return new CreateInstrumentRequestTestBuilder(CreateInstrumentRequest.builder());
     }
 
+    public CreateInstrumentRequestTestBuilder withName(String ssn){
+        builder.withName(ssn);
+        return this;
+    }
+
     @Override
     public CreateInstrumentRequest build() {
         return builder.build();

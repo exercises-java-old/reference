@@ -21,6 +21,6 @@ public class OrderBookClientImp implements OrderBookClient {
 
     @Override
     public OrderBook getOrderBook(String instrumentId) {
-        return orderBookService.getOrderbook(instrumentId);
+        return orderBookService.getOrderBook(instrumentId);
     }
 }

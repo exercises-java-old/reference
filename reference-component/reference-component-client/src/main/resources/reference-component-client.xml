@@ -8,4 +8,8 @@
         <constructor-arg name="orderBookService" ref="orderBookService"/>
     </bean>
 
+    <bean id="instrumentClient" class="se.lexicon.reference.component.client.InstrumentClientImpl">
+        <constructor-arg name="instrumentService" ref="instrumentService"/>
+    </bean>
+
 </beans>

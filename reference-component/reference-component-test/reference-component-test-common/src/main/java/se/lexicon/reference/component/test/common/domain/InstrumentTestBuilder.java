@@ -5,7 +5,6 @@ import com.so4it.test.domain.AbstractTestBuilder;
 import se.lexicon.reference.component.domain.Instrument;
 
 import java.util.Currency;
-import java.util.Locale;
 
 public class InstrumentTestBuilder extends AbstractTestBuilder<Instrument> {
 

@@ -25,10 +25,10 @@ import org.junit.runners.Suite;
 @Suite.SuiteClasses({
         ReferenceComponentOrderBookDaoIntegrationTest.class,
         ReferenceComponentInstrumentDaoIntegrationTest.class
-        // OrderComponentDaoIntegrationTest.class
 })
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ReferenceComponentDaoIntegrationTestSuite {
+
 
     private static final int LUS_PORT = PortUtil.nextFreePort();
 
@@ -36,7 +36,8 @@ public class ReferenceComponentDaoIntegrationTestSuite {
 
     private static final TestConfigurationSource CONFIGURATION_SOURCE = new TestConfigurationSource();
 
-    private static final DynamicConfiguration DYNAMIC_CONFIGURATION = ServiceFrameworkCommonTest.createDynamicConfiguration(CONFIGURATION_SOURCE);
+    private static final DynamicConfiguration DYNAMIC_CONFIGURATION = ServiceFrameworkCommonTest
+            .createDynamicConfiguration(CONFIGURATION_SOURCE);
 
     private static final ServiceBeanStateRegistry SERVICE_BEAN_STATE_REGISTRY = new ServiceBeanStateRegistry();
 
@@ -45,7 +46,6 @@ public class ReferenceComponentDaoIntegrationTestSuite {
     private static SpringContextRule EXPORT_TEST_RULE;
 
     private static TestConfigurationSourceTestRule CONFIGURATION_SOURCE_TEST_RULE;
-
 
     @ClassRule
     public static final RuleChain SUITE_RULE_CHAIN = RuleChain

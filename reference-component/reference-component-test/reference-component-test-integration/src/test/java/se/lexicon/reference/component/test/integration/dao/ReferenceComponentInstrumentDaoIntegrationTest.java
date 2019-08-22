@@ -16,20 +16,19 @@ import se.lexicon.reference.component.test.common.entity.InstrumentEntityTestBui
 @Category(IntegrationTest.class)
 public class ReferenceComponentInstrumentDaoIntegrationTest {
 
+
     @ClassRule
     public static final RuleChain SUITE_RULE_CHAIN = ReferenceComponentDaoIntegrationTestSuite.SUITE_RULE_CHAIN;
 
     @Rule
-    public ClearGigaSpaceTestRule clearGigaSpaceTestRule = new ClearGigaSpaceTestRule(ReferenceComponentDaoIntegrationTestSuite.getExportContext().getBean(GigaSpace.class));
-
-
+    public ClearGigaSpaceTestRule clearGigaSpaceTestRule = new ClearGigaSpaceTestRule
+            (ReferenceComponentDaoIntegrationTestSuite.getExportContext().getBean(GigaSpace.class));
 
     @Test
     public void testInsertingInstrument() {
-        InstrumentDao instrumentDao = ReferenceComponentDaoIntegrationTestSuite.getExportContext().getBean(InstrumentDao.class);
+        InstrumentDao instrumentDao = ReferenceComponentDaoIntegrationTestSuite
+                .getExportContext().getBean(InstrumentDao.class);
         InstrumentEntity instrumentEntity = instrumentDao.insert(InstrumentEntityTestBuilder.builder().build());
         Assert.assertEquals(instrumentEntity, instrumentDao.read(instrumentEntity.getId()));
     }
-
-
 }

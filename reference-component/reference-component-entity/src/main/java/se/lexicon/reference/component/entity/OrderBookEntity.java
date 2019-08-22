@@ -10,7 +10,10 @@ import com.so4it.component.entity.IdEntity;
 
 @SpaceClass
 public class OrderBookEntity extends IdEntity<String> {
+
+
     @Allowed(types = Allowed.Type.NULLABLE,value = "value can be nullable because its autogenerate")
+
     private String id;
     private String instrumentId;
 
@@ -20,7 +23,6 @@ public class OrderBookEntity extends IdEntity<String> {
     private OrderBookEntity(Builder builder) {
         this.id = builder.id;
         this.instrumentId = Required.notNull(builder.instrumentId, "instrumentId", builder.isTemplate());
-
     }
 
     @Override
@@ -33,15 +35,15 @@ public class OrderBookEntity extends IdEntity<String> {
     public String getInstrumentId() {
         return instrumentId;
     }
+
     private void setId(String id) {
         this.id = id;
     }
 
-
-
     private void setInstrumentId(String instrumentId) {
         this.instrumentId = instrumentId;
     }
+
 
     public static Builder builder() {
         return new Builder(false);
@@ -50,10 +52,9 @@ public class OrderBookEntity extends IdEntity<String> {
     public static Builder templateBuilder() {
         return new Builder(true);
     }
-
-
-
+    //
     public static class Builder extends AbstractEntityBuilder<OrderBookEntity> {
+
         private String id;
         private String instrumentId;
 

@@ -16,7 +16,7 @@ public class InstrumentsRemoteResultReducer implements RemoteResultReducer<Instr
     @Override
     public Instruments reduce(List<RemoteResult<Instruments>> list) throws ResultReducerException {
         Set<Instrument> instrumentSet = new HashSet<>();
-        list.forEach(rr -> instrumentSet.addAll(rr.getResult().asSet()));
+        list.forEach( rr -> instrumentSet.addAll( rr.getResult().asSet()));
         return Instruments.valueOf(instrumentSet);
     }
 }

@@ -8,12 +8,13 @@ import se.lexicon.reference.component.domain.OrderBook;
 import se.lexicon.reference.component.domain.OrderBooks;
 import se.lexicon.reference.component.entity.OrderBookEntity;
 
-import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 @ServiceExport(OrderBookService.class)
 public class OrderBookServiceImpl implements OrderBookService {
+
+
     private OrderBookDao orderBookDao;
 
     public OrderBookServiceImpl(OrderBookDao orderBookDao) {
@@ -30,20 +31,20 @@ public class OrderBookServiceImpl implements OrderBookService {
                 .withId(orderBookEntity.getId())
                 .withInstrumentId(orderBookEntity.getInstrumentId())
                 .build();
-
     }
 
     @Override
     public OrderBook getOrderBook(String instrumentId) {
-
-        OrderBookEntity orderBookEntity = orderBookDao.readIfExists(OrderBookEntity.templateBuilder().withInstrumentId(instrumentId).build());
-        return OrderBook.builder().withId(instrumentId).withInstrumentId(orderBookEntity.getInstrumentId()).build();
+        OrderBookEntity orderBookEntity = orderBookDao.readIfExists(OrderBookEntity.templateBuilder()
+                .withInstrumentId(instrumentId).build());
+        return OrderBook.builder().withId(instrumentId).withInstrumentId(orderBookEntity.getInstrumentId())
+                .build();
     }
 
     @Override
     public OrderBooks getAllOrderBooks() {
         Set<OrderBookEntity> entities=orderBookDao.readAll();
-        return OrderBooks.valueOf(entities.stream().map(rr->OrderBook.builder()
+        return OrderBooks.valueOf(entities.stream().map( rr -> OrderBook.builder()
                     .withId(rr.getId())
                     .withInstrumentId(rr.getInstrumentId()).build()).collect(Collectors.toSet()));
     }

@@ -19,31 +19,36 @@ import java.util.Arrays;
 @Category(IntegrationTest.class)
 public class ReferenceComponentOrderBookServiceIntegrationTest {
 
+
     @ClassRule
     public static final RuleChain SUITE_RULE_CHAIN = ReferenceComponentServiceIntegrationTestSuite.SUITE_RULE_CHAIN;
 
     @Rule
-    public ClearGigaSpaceTestRule clearGigaSpaceTestRule = new ClearGigaSpaceTestRule(ReferenceComponentServiceIntegrationTestSuite.getExportContext().getBean(GigaSpace.class));
+    public ClearGigaSpaceTestRule clearGigaSpaceTestRule = new ClearGigaSpaceTestRule
+            (ReferenceComponentServiceIntegrationTestSuite.getExportContext()
+                    .getBean(GigaSpace.class));
 
     @Test
     public void testGetOrderBookService() {
-        OrderBookService orderBookService = ReferenceComponentServiceIntegrationTestSuite.getImportContext().getBean(OrderBookService.class);
+        OrderBookService orderBookService = ReferenceComponentServiceIntegrationTestSuite
+                .getImportContext().getBean(OrderBookService.class);
         Assert.assertNotNull(orderBookService);
     }
 
     @Test
     public void testCreatingOrderBook() {
-        OrderBookService orderBookService = ReferenceComponentServiceIntegrationTestSuite.getImportContext().getBean(OrderBookService.class);
-        OrderBook inserted = orderBookService.createOrderBook(CreateOrderBookRequestTestBuilder.builder().build());
+        OrderBookService orderBookService = ReferenceComponentServiceIntegrationTestSuite
+                .getImportContext().getBean(OrderBookService.class);
+        OrderBook inserted = orderBookService.createOrderBook(CreateOrderBookRequestTestBuilder.builder()
+                .build());
         OrderBook fetched = orderBookService.getOrderBook(inserted.getInstrumentId());
         Assert.assertEquals(inserted.getInstrumentId(), fetched.getInstrumentId());
-
     }
 
-    //
     @Test
     public void testGetAllOrderBooks() {
-        OrderBookService orderBookService = ReferenceComponentServiceIntegrationTestSuite.getImportContext().getBean(OrderBookService.class);
+        OrderBookService orderBookService = ReferenceComponentServiceIntegrationTestSuite
+                .getImportContext().getBean(OrderBookService.class);
         OrderBook inserted0 = orderBookService.createOrderBook(CreateOrderBookRequestTestBuilder.builder().build());
         OrderBook inserted1 = orderBookService.createOrderBook(CreateOrderBookRequestTestBuilder.builder().build());
         OrderBook inserted2 = orderBookService.createOrderBook(CreateOrderBookRequestTestBuilder.builder().build());

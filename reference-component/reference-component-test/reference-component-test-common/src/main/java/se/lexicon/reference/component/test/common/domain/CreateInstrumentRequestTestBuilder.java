@@ -7,7 +7,10 @@ import se.lexicon.reference.component.domain.CreateInstrumentRequest;
 import java.util.Currency;
 
 public class CreateInstrumentRequestTestBuilder extends AbstractTestBuilder<CreateInstrumentRequest> {
+
+
     private CreateInstrumentRequest.Builder builder;
+
     public CreateInstrumentRequestTestBuilder(CreateInstrumentRequest.Builder builder) {
         this.builder = Required.notNull(builder, "builder");
         this.builder = builder.withName("name").withCurrency(Currency.getInstance("SEK"));
@@ -17,7 +20,7 @@ public class CreateInstrumentRequestTestBuilder extends AbstractTestBuilder<Crea
         return new CreateInstrumentRequestTestBuilder(CreateInstrumentRequest.builder());
     }
 
-    public CreateInstrumentRequestTestBuilder withName(String ssn){
+    public CreateInstrumentRequestTestBuilder withName(String ssn) {
         builder.withName(ssn);
         return this;
     }
@@ -26,5 +29,4 @@ public class CreateInstrumentRequestTestBuilder extends AbstractTestBuilder<Crea
     public CreateInstrumentRequest build() {
         return builder.build();
     }
-
 }

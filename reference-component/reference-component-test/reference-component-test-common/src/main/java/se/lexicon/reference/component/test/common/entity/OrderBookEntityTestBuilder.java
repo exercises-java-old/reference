@@ -6,6 +6,7 @@ import se.lexicon.reference.component.entity.OrderBookEntity;
 
 public class OrderBookEntityTestBuilder extends AbstractTestBuilder<OrderBookEntity> {
 
+
     private OrderBookEntity.Builder builder;
 
     public OrderBookEntityTestBuilder(OrderBookEntity.Builder builder) {
@@ -22,5 +23,4 @@ public class OrderBookEntityTestBuilder extends AbstractTestBuilder<OrderBookEnt
     public OrderBookEntity build() {
         return builder.build();
     }
-
 }

@@ -48,6 +48,7 @@ public class ReferenceComponentInstrumentServiceIntegrationTest {
     public void testGetAllInstruments() {
         InstrumentService instrumentService = ReferenceComponentServiceIntegrationTestSuite
                 .getImportContext().getBean(InstrumentService.class);
+
         // fetched by name
         Instrument inserted1 = instrumentService.createInstrument(CreateInstrumentRequestTestBuilder.builder()
                 .withName("name1").build());

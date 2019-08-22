@@ -5,6 +5,8 @@ import com.so4it.test.domain.AbstractTestBuilder;
 import se.lexicon.reference.component.domain.CreateOrderBookRequest;
 
 public class CreateOrderBookRequestTestBuilder extends AbstractTestBuilder<CreateOrderBookRequest> {
+
+
     private CreateOrderBookRequest.Builder builder;
 
     public CreateOrderBookRequestTestBuilder(CreateOrderBookRequest.Builder builder) {

@@ -20,11 +20,13 @@ import java.util.function.Function;
 )
 public class OrderBooks extends AbstractIterable<OrderBook> {
 
+
     private static final long serialVersionUID =1L;
 
     public OrderBooks() {
         super(OrderBook.class, OrderBooks.class);
     }
+
     public static OrderBooks valueOf(OrderBook... endpointRegistrations) {
         return (OrderBooks) AbstractIterable.valueOf(endpointRegistrations, OrderBook.class, OrderBooks.class);
     }

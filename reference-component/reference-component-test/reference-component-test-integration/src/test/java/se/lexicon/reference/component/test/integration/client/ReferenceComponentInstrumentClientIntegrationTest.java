@@ -19,28 +19,39 @@ import se.lexicon.reference.component.test.integration.service.ReferenceComponen
 @Category(IntegrationTest.class)
 public class ReferenceComponentInstrumentClientIntegrationTest {
 
+
     @ClassRule
     public static final RuleChain SUITE_RULE_CHAIN = ReferenceComponentServiceIntegrationTestSuite.SUITE_RULE_CHAIN;
 
     @Rule
-    public ClearGigaSpaceTestRule clearGigaSpaceTestRule = new ClearGigaSpaceTestRule(ReferenceComponentServiceIntegrationTestSuite.getExportContext().getBean(GigaSpace.class));
+    public ClearGigaSpaceTestRule clearGigaSpaceTestRule = new ClearGigaSpaceTestRule
+            (ReferenceComponentServiceIntegrationTestSuite.getExportContext()
+                    .getBean(GigaSpace.class));
 
     @Test
     public void testGetInstrumentClient() {
-        InstrumentClient instrumentClient = ReferenceComponentServiceIntegrationTestSuite.getImportContext().getBean(InstrumentClient.class);
+        InstrumentClient instrumentClient = ReferenceComponentServiceIntegrationTestSuite
+                .getImportContext()
+                .getBean(InstrumentClient.class);
         Assert.assertNotNull(instrumentClient);
     }
 
     @Test
     public void testCreatingInstrument() {
-        InstrumentClient instrumentClient = ReferenceComponentServiceIntegrationTestSuite.getImportContext().getBean(InstrumentClient.class);
-        instrumentClient.createInstrument(CreateInstrumentRequestTestBuilder.builder().build());
-        Assert.assertEquals(1, ReferenceComponentServiceIntegrationTestSuite.getExportContext().getBean(GigaSpace.class).count(InstrumentEntity.templateBuilder().build()));
+        InstrumentClient instrumentClient = ReferenceComponentServiceIntegrationTestSuite
+                .getImportContext()
+                .getBean(InstrumentClient.class);
+        instrumentClient.createInstrument(CreateInstrumentRequestTestBuilder.builder()
+                .build());
+        Assert.assertEquals(1, ReferenceComponentServiceIntegrationTestSuite.getExportContext()
+                .getBean(GigaSpace.class).count(InstrumentEntity.templateBuilder()
+                        .build()));
     }
 
     @Test
     public void getInstrument() {
-        InstrumentClient instrumentClient = ReferenceComponentServiceIntegrationTestSuite.getImportContext().getBean(InstrumentClient.class);
+        InstrumentClient instrumentClient = ReferenceComponentServiceIntegrationTestSuite.getImportContext()
+                .getBean(InstrumentClient.class);
         CreateInstrumentRequest inserted = CreateInstrumentRequestTestBuilder.builder().build();
         instrumentClient.createInstrument(inserted);
         Instrument fetched = instrumentClient.getInstrument(inserted.getName());

@@ -7,12 +7,12 @@ import se.lexicon.reference.component.service.InstrumentService;
 
 public class InstrumentClientImpl implements InstrumentClient {
 
+
     private InstrumentService instrumentService;
 
     public InstrumentClientImpl(InstrumentService instrumentService) {
         this.instrumentService = Required.notNull(instrumentService,"instrumentService");
     }
-
 
     @Override
     public void createInstrument(CreateInstrumentRequest createInstrumentRequest) {

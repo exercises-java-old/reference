@@ -32,9 +32,9 @@ import se.lexicon.reference.component.test.integration.client.ReferenceComponent
         ReferenceComponentOrderBookClientIntegrationTest.class,
         ReferenceComponentInstrumentClientIntegrationTest.class,
 })
-
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ReferenceComponentServiceIntegrationTestSuite {
+
 
     private static final int LUS_PORT = PortUtil.nextFreePort();
 
@@ -42,7 +42,8 @@ public class ReferenceComponentServiceIntegrationTestSuite {
 
     private static final TestConfigurationSource CONFIGURATION_SOURCE = new TestConfigurationSource();
 
-    private static final DynamicConfiguration DYNAMIC_CONFIGURATION = ServiceFrameworkCommonTest.createDynamicConfiguration(CONFIGURATION_SOURCE);
+    private static final DynamicConfiguration DYNAMIC_CONFIGURATION = ServiceFrameworkCommonTest
+            .createDynamicConfiguration(CONFIGURATION_SOURCE);
 
     private static final ServiceBeanStateRegistry SERVICE_BEAN_STATE_REGISTRY = new ServiceBeanStateRegistry();
 

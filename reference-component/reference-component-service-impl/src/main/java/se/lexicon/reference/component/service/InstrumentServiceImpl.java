@@ -8,11 +8,7 @@ import se.lexicon.reference.component.domain.Instrument;
 import se.lexicon.reference.component.domain.Instruments;
 import se.lexicon.reference.component.entity.InstrumentEntity;
 
-import java.util.Objects;
 import java.util.Set;
-import java.util.function.BinaryOperator;
-import java.util.function.Function;
-import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 @ServiceExport(InstrumentService.class)
@@ -35,7 +31,8 @@ public class InstrumentServiceImpl implements InstrumentService {
 
         instrumentEntity = instrumentDao.insert(instrumentEntity);
         return Instrument.builder()
-                .withId(instrumentEntity.getId())
+                .withId(instrumentEntity
+                        .getId())
                 .withName(instrumentEntity.getName())
                 .withCurrency(instrumentEntity.getCurrency())
                 .build();
@@ -58,7 +55,7 @@ public class InstrumentServiceImpl implements InstrumentService {
     @Override
     public Instruments getAllInstruments() {
         Set<InstrumentEntity> entities = instrumentDao.readAll();
-        return Instruments.valueOf(entities.stream().map( m -> Instrument.builder()
+        return Instruments.valueOf(entities.stream().map(m -> Instrument.builder()
                 .withName(m.getName())
                 .withId(m.getId())
                 .withCurrency(m.getCurrency())

@@ -29,13 +29,14 @@ public class CreateInstrumentRequest extends ValueObject {
 
     @Override
     protected Object[] getIdFields() {
-        return new Object[] { name, currency };
+        return new Object[]{name, currency};
     }
 
 
     public static Builder builder() {
         return new Builder();
     }
+
     //
     public static class Builder implements com.so4it.common.builder.Builder<CreateInstrumentRequest> {
 

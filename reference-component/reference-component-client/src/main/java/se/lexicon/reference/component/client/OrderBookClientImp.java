@@ -7,6 +7,7 @@ import se.lexicon.reference.component.service.OrderBookService;
 
 public class OrderBookClientImp implements OrderBookClient {
 
+
    private OrderBookService orderBookService;
 
     public OrderBookClientImp(OrderBookService orderBookService) {
@@ -16,7 +17,6 @@ public class OrderBookClientImp implements OrderBookClient {
     @Override
     public void createOrderBook(CreateOrderBookRequest createOrderBookRequest) {
         orderBookService.createOrderBook(createOrderBookRequest);
-
     }
 
     @Override

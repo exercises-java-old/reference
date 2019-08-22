@@ -6,6 +6,7 @@ import se.lexicon.reference.component.domain.OrderBook;
 
 public class OrderBookTestBuilder extends AbstractTestBuilder<OrderBook> {
 
+
     private OrderBook.Builder builder;
 
     private OrderBookTestBuilder(OrderBook.Builder builder) {

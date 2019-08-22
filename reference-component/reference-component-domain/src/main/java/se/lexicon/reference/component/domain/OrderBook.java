@@ -29,7 +29,7 @@ public class OrderBook extends ValueObject {
 
     @Override
     protected Object[] getIdFields() {
-        return new Object[]{id, instrumentId};
+        return new Object[]{ id, instrumentId };
     }
 
 

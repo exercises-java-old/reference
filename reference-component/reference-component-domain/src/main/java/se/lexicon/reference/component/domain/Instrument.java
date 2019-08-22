@@ -37,7 +37,7 @@ public class Instrument extends ValueObject {
 
     @Override
     protected Object[] getIdFields() {
-        return new Object[]{id, name};
+        return new Object[]{ id, name, currency };
     }
 
 

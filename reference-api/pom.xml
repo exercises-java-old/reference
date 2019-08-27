@@ -17,7 +17,7 @@
         <module>reference-api-mapper</module>
         <module>reference-api-pu</module>
         <module>reference-api-server</module>
-        <!--<module>reference-api-test</module>-->
+        <module>reference-api-test</module>
     </modules>
 
 

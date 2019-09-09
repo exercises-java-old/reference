@@ -22,11 +22,13 @@ import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
 import org.junit.runners.Suite;
 import se.lexicon.reference.component.service.ReferenceComponentServiceProvider;
+import se.lexicon.reference.component.test.integration.client.ReferenceComponentOrderBookClientIntegrationTest;
 
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-        ReferenceComponentOrderBookServiceIntegrationTest.class
+        ReferenceComponentOrderBookServiceIntegrationTest.class,
+        ReferenceComponentOrderBookClientIntegrationTest.class,
 })
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ReferenceComponentServiceIntegrationTestSuite {
